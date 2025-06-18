@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ChevronDown, Code, Shield, Brain, Zap, Calendar, ArrowRight, Github, Linkedin, Youtube } from 'lucide-react';
+import { ChevronDown, Code, Shield, Brain, Zap, Calendar, ArrowRight, Github, Linkedin, Youtube, Settings, Cog } from 'lucide-react';
 
 const Landing = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -32,7 +32,7 @@ const Landing = () => {
     { icon: Shield, title: "Cybersecurity", color: "from-gray-700 to-blue-900" }
   ];
 
-  const FloatingElement = ({ children, delay = 0, duration = 4 }) => (
+  const FloatingElement = ({ children, delay = 0, duration = 14 }) => (
     <div 
       className="absolute animate-pulse"
       style={{
@@ -44,14 +44,45 @@ const Landing = () => {
     </div>
   );
 
-  const Balloon = ({ color, size = "w-8 h-10", left, top, delay = 0 }) => (
-    <FloatingElement delay={delay}>
-      <div 
-        className={`${size} ${color} rounded-full shadow-xl opacity-30 hover:opacity-60 transition-opacity duration-300 backdrop-blur-sm`}
-        style={{ left, top }}
-      />
-    </FloatingElement>
-  );
+  const MachineWheel = ({ size = "w-12 h-12", left, top, delay = 1, rotationSpeed = "slow" }) => {
+    const rotationClass = rotationSpeed === "fast" ? "animate-spin" : "animate-spin-slow";
+    
+    // return (
+    //   <FloatingElement delay={delay}>
+    //     <div 
+    //       className={`${size} opacity-40 hover:opacity-70 transition-opacity duration-300`}
+    //       style={{ left, top }}
+    //     >
+    //       <div className={`w-full h-full ${rotationClass}`}>
+    //         <Settings 
+    //           className="w-full h-full text-gray-600 drop-shadow-lg" 
+    //           strokeWidth={1.5}
+    //         />
+    //       </div>
+    //     </div>
+    //   </FloatingElement>
+    // );
+  };
+
+  const CogWheel = ({ size = "w-6 h-6", left, top, delay = 0, reverse = false }) => {
+    const rotationClass = reverse ? "animate-reverse-spin" : "animate-spin-slow";
+    
+    return (
+      <FloatingElement delay={delay}>
+        <div 
+          className={`${size} opacity-35 hover:opacity-65 transition-opacity duration-300`}
+          style={{ left, top }}
+        >
+          <div className={`w-full h-full ${rotationClass}`}>
+            <Cog 
+              className="w-full h-full text-blue-700 drop-shadow-md" 
+              strokeWidth={2}
+            />
+          </div>
+        </div>
+      </FloatingElement>
+    );
+  };
 
   return (
     <div 
@@ -71,26 +102,33 @@ const Landing = () => {
       {/* Animated Background Elements */}
       <div className="absolute inset-0 w-full h-full overflow-hidden z-10">
         {/* Background Art Image */}
-        <div 
+        {/* <div 
           className="absolute inset-0 w-full h-full opacity-15 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDx0ZXh0IHg9IjUwIiB5PSI1MCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OTk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiPkFydCBJbWFnZTwvdGV4dD4KICA8L3N2Zz4K')"
           }}
-        />
+        /> */}
         
         {/* Overlay to blend with theme */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-100/80 via-blue-50/70 to-gray-200/80" />
         
-        {/* Floating Balloons - Higher z-index to appear above header */}
+        {/* Floating Machine Wheels - Higher z-index to appear above header */}
         <div className="relative z-50">
-          <Balloon color="bg-blue-400" size="w-20 h-24" left="35%" top="25%" delay={0} />
-          <Balloon color="bg-gray-400" size="w-16 h-20" left="85%" top="20%" delay={1} />
-          <Balloon color="bg-blue-600" size="w-24 h-28" left="45%" top="35%" delay={2} />
-          <Balloon color="bg-slate-500" size="w-18 h-22" left="80%" top="30%" delay={0.5} />
-          <Balloon color="bg-gray-300" size="w-14 h-18" left="65%" top="15%" delay={1.5} />
-          <Balloon color="bg-blue-500" size="w-22 h-26" left="50%" top="20%" delay={2.5} />
-          <Balloon color="bg-blue-300" size="w-12 h-16" left="75%" top="25%" delay={3} />
-          <Balloon color="bg-gray-500" size="w-16 h-20" left="60%" top="40%" delay={1.8} />
+          {/* Large Settings Gears */}
+          <MachineWheel size="w-20 h-20" left="15%" top="15%" delay={0} rotationSpeed="slow" />
+          <MachineWheel size="w-16 h-16" left="85%" top="20%" delay={1} rotationSpeed="slow" />
+          <MachineWheel size="w-24 h-24" left="25%" top="35%" delay={2} rotationSpeed="slow" />
+          <MachineWheel size="w-18 h-18" left="80%" top="35%" delay={0.5} rotationSpeed="slow" />
+          
+          {/* Smaller Cog Wheels
+          <CogWheel size="w-12 h-12" left="35%" top="20%" delay={1.5} reverse={false} />
+          <CogWheel size="w-14 h-14" left="75%" top="15%" delay={2.5} reverse={true} />
+          <CogWheel size="w-10 h-10" left="45%" top="25%" delay={3} reverse={false} />
+          <CogWheel size="w-8 h-8" left="90%" top="30%" delay={1.8} reverse={true} />
+           */}
+          {/* Additional mechanical elements */}
+          <MachineWheel size="w-22 h-22" left="10%" top="30%" delay={2.2} rotationSpeed="slow" />
+          <CogWheel size="w-16 h-16" left="65%" top="40%" delay={0.8} reverse={true} />
         </div>
         
         {/* Animated Grid */}
@@ -230,6 +268,24 @@ const Landing = () => {
           25% { transform: translateY(-15px) rotate(2deg) scale(1.05); }
           50% { transform: translateY(-25px) rotate(5deg) scale(1.1); }
           75% { transform: translateY(-15px) rotate(2deg) scale(1.05); }
+        }
+        
+        @keyframes spin-slow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        
+        @keyframes reverse-spin {
+          from { transform: rotate(360deg); }
+          to { transform: rotate(0deg); }
+        }
+        
+        .animate-spin-slow {
+          animation: spin-slow 8s linear infinite;
+        }
+        
+        .animate-reverse-spin {
+          animation: reverse-spin 10s linear infinite;
         }
         
         /* Ensure full width override */
