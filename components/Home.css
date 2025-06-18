@@ -48,8 +48,8 @@
 .wrapper div {
     height: 60px;
     width: 60px;
-    border: 2px solid rgba(255, 255, 255, 0.7);
-    border-radius: 100px;
+    /* border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 100px; */
     position: absolute;
     top: 10%;
     left: 10%;
@@ -57,10 +57,10 @@
 }
 
 div .dot {
-    height: 5px;
-    width: 5px;
-    border-radius: 55px;
-    background: purple;
+    height: 15px;
+    width: 15px;
+    border-radius: 155px;
+    background: rgb(199, 46, 120);
     position: absolute;
     top: 20%;
     right: 20%;

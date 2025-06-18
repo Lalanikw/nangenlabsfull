@@ -1,12 +1,12 @@
 "use client"
 
-import Landing from "@/components/Landing";
-import Image from "next/image";
+import Landing from "../components/Landing";
 
 export default function Home() {
   return (
-    <div>
-      <Landing/>
-    </div>
+      <div className="m-0 p-0 ">
+        {/* Hero Content */}
+          <Landing/>
+      </div>
   );
 }

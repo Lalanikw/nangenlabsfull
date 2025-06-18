@@ -1,8 +1,7 @@
-import { Inter } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-
-const inter = Inter({ subsets: ["latin"] });
+import Header from "../components/Header";
+const outfitFont = Outfit({ subsets: ["latin"] });
 
 export const metadata = {
   title: "NanGenLabs",
@@ -11,16 +10,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <head>
-
-      </head>
-      <body className={inter.className}>
-        <Header/>
-        {children}
-      
+    <html lang="en" className={outfitFont.className}>
+      <body className={outfitFont.className}>
+        <div className="relative">
+          <Header />
+          <main className="relative">
+            {children}
+          </main>
+        </div>
       </body>
-      
     </html>
   );
 }
