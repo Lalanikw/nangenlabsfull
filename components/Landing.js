@@ -32,58 +32,6 @@ const Landing = () => {
     { icon: Shield, title: "Cybersecurity", color: "from-gray-700 to-blue-900" }
   ];
 
-  const FloatingElement = ({ children, delay = 0, duration = 14 }) => (
-    <div 
-      className="absolute animate-pulse"
-      style={{
-        animation: `float ${duration}s ease-in-out infinite`,
-        animationDelay: `${delay}s`
-      }}
-    >
-      {children}
-    </div>
-  );
-
-  const MachineWheel = ({ size = "w-12 h-12", left, top, delay = 1, rotationSpeed = "slow" }) => {
-    const rotationClass = rotationSpeed === "fast" ? "animate-spin" : "animate-spin-slow";
-    
-    // return (
-    //   <FloatingElement delay={delay}>
-    //     <div 
-    //       className={`${size} opacity-40 hover:opacity-70 transition-opacity duration-300`}
-    //       style={{ left, top }}
-    //     >
-    //       <div className={`w-full h-full ${rotationClass}`}>
-    //         <Settings 
-    //           className="w-full h-full text-gray-600 drop-shadow-lg" 
-    //           strokeWidth={1.5}
-    //         />
-    //       </div>
-    //     </div>
-    //   </FloatingElement>
-    // );
-  };
-
-  const CogWheel = ({ size = "w-6 h-6", left, top, delay = 0, reverse = false }) => {
-    const rotationClass = reverse ? "animate-reverse-spin" : "animate-spin-slow";
-    
-    return (
-      <FloatingElement delay={delay}>
-        <div 
-          className={`${size} opacity-35 hover:opacity-65 transition-opacity duration-300`}
-          style={{ left, top }}
-        >
-          <div className={`w-full h-full ${rotationClass}`}>
-            <Cog 
-              className="w-full h-full text-blue-700 drop-shadow-md" 
-              strokeWidth={2}
-            />
-          </div>
-        </div>
-      </FloatingElement>
-    );
-  };
-
   return (
     <div 
       className="full-width-override w-screen min-h-screen bg-gradient-to-br from-gray-100 via-blue-50 to-gray-200 text-gray-900 overflow-x-hidden relative" 
@@ -102,35 +50,16 @@ const Landing = () => {
       {/* Animated Background Elements */}
       <div className="absolute inset-0 w-full h-full overflow-hidden z-10">
         {/* Background Art Image */}
-        {/* <div 
+        <div 
           className="absolute inset-0 w-full h-full opacity-15 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDx0ZXh0IHg9IjUwIiB5PSI1MCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OTk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiPkFydCBJbWFnZTwvdGV4dD4KICA8L3N2Zz4K')"
+            backgroundImage: "url('/gears.PNG')"
           }}
-        /> */}
-        
+        />
+
         {/* Overlay to blend with theme */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-100/80 via-blue-50/70 to-gray-200/80" />
-        
-        {/* Floating Machine Wheels - Higher z-index to appear above header */}
-        <div className="relative z-50">
-          {/* Large Settings Gears */}
-          <MachineWheel size="w-20 h-20" left="15%" top="15%" delay={0} rotationSpeed="slow" />
-          <MachineWheel size="w-16 h-16" left="85%" top="20%" delay={1} rotationSpeed="slow" />
-          <MachineWheel size="w-24 h-24" left="25%" top="35%" delay={2} rotationSpeed="slow" />
-          <MachineWheel size="w-18 h-18" left="80%" top="35%" delay={0.5} rotationSpeed="slow" />
-          
-          {/* Smaller Cog Wheels
-          <CogWheel size="w-12 h-12" left="35%" top="20%" delay={1.5} reverse={false} />
-          <CogWheel size="w-14 h-14" left="75%" top="15%" delay={2.5} reverse={true} />
-          <CogWheel size="w-10 h-10" left="45%" top="25%" delay={3} reverse={false} />
-          <CogWheel size="w-8 h-8" left="90%" top="30%" delay={1.8} reverse={true} />
-           */}
-          {/* Additional mechanical elements */}
-          <MachineWheel size="w-22 h-22" left="10%" top="30%" delay={2.2} rotationSpeed="slow" />
-          <CogWheel size="w-16 h-16" left="65%" top="40%" delay={0.8} reverse={true} />
-        </div>
-        
+
         {/* Animated Grid */}
         <div className="absolute inset-0 w-full h-full opacity-10">
           <div className="grid grid-cols-12 grid-rows-12 h-full w-full">
@@ -155,49 +84,49 @@ const Landing = () => {
         />
       </div>
 
-      {/* Hero Section */}
-      <main className="w-screen relative z-30 flex flex-col items-center justify-center min-h-screen px-4 md:px-6 lg:px-8 text-center">
+      {/* Hero Section - Added more top padding and adjusted spacing */}
+      <main className="w-screen relative z-30 flex flex-col items-center justify-center min-h-screen px-4 md:px-6 lg:px-8 text-center pt-24 sm:pt-32">
         <div className="w-full max-w-none">
+          <div>
           <div className={`transition-all duration-1500 delay-300 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-700 via-gray-800 to-blue-900 bg-clip-text text-transparent animate-pulse">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl h-16 sm:h-16 font-bold mb-8 bg-gradient-to-r from-blue-700 to-gray-800 bg-clip-text text-transparent animate-pulse">
               NanGenLabs
             </h1>
-            
-            <div className="text-lg sm:text-xl md:text-2xl mb-4 h-12 sm:h-16 flex items-center justify-center">
+            </div>
+            <div className="text-lg sm:text-xl md:text-2xl mb-8 h-10 sm:h-10 flex items-center justify-center">
               <span className="animate-pulse">Empowering Digital Transformation with</span>
             </div>
-            
             {/* Rotating Services */}
-            <div className="h-16 sm:h-20 flex items-center justify-center mb-8">
+            <div className="h-16 sm:h-16 flex items-center justify-center mb-8">
               {services.map((service, index) => {
                 const Icon = service.icon;
-                return (
-                  <div
-                    key={index}
-                    className={`absolute flex items-center space-x-2 sm:space-x-3 transition-all duration-1000 ${
-                      activeService === index 
-                        ? 'opacity-100 scale-100 rotate-0' 
-                        : 'opacity-0 scale-75 rotate-12'
-                    }`}
-                  >
-                    <Icon size={24} className={`sm:text-2xl bg-gradient-to-r ${service.color} bg-clip-text text-transparent`} />
-                    <span className={`text-xl sm:text-2xl md:text-3xl font-semibold bg-gradient-to-r ${service.color} bg-clip-text text-transparent`}>
-                      {service.title}
-                    </span>
-                  </div>
-                );
+                // return (
+                //   <div
+                //     key={index}
+                //     className={`absolute flex items-center space-x-2 sm:space-x-3 transition-all duration-1000 ${
+                //       activeService === index 
+                //         ? 'opacity-100 scale-100 rotate-0' 
+                //         : 'opacity-0 scale-75 rotate-12'
+                //     }`}
+                //   >
+                //     <Icon size={24} className={`sm:text-2xl bg-gradient-to-r ${service.color} bg-clip-text text-transparent`} />
+                //     <span className={`text-xl sm:text-2xl md:text-3xl font-semibold bg-gradient-to-r ${service.color} bg-clip-text text-transparent`}>
+                //       {service.title}
+                //     </span>
+                //   </div>
+                // );
               })}
             </div>
             
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-8 sm:mb-12 leading-relaxed px-4">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-12 sm:mb-16 leading-relaxed px-4">
               We bridge innovative technology with strategic solutions. Specialized in custom web development, 
-              intelligent automation, and transformative AI solutions that drive business growth and efficiency.
+              intelligent automation, transformative AI solutions, and comprehensive cybersecurity services including penetration testing that drive business growth and efficiency.
             </p>
           </div>
 
           {/* CTA Buttons */}
-          <div className={`flex flex-col sm:flex-row gap-4 sm:gap-6 mb-8 sm:mb-12 transition-all duration-1500 delay-500 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
-            <Link href="/appointment">
+          <div className={`flex flex-col sm:flex-row gap-4 sm:gap-6 mb-12 sm:mb-16 transition-all duration-1500 delay-500 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
+            <Link href="/ContactUs">
               <button className="group px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full font-semibold text-base sm:text-lg text-white hover:scale-105 transform transition-all duration-300 flex items-center justify-center space-x-2 shadow-xl hover:shadow-blue-500/25 w-full sm:w-auto">
                 <Calendar size={18} className="sm:w-5 sm:h-5" />
                 <span>Book Consultation</span>
@@ -205,7 +134,7 @@ const Landing = () => {
               </button>
             </Link>
             
-            <Link href="/services">
+            <Link href="/Services">
               <button className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-blue-600 text-blue-600 rounded-full font-semibold text-base sm:text-lg hover:bg-blue-600 hover:text-white hover:scale-105 transform transition-all duration-300 shadow-xl hover:shadow-blue-500/25 w-full sm:w-auto">
                 View Services
               </button>
@@ -213,7 +142,7 @@ const Landing = () => {
           </div>
 
           {/* Social Links */}
-          <div className={`flex justify-center space-x-4 sm:space-x-6 mb-6 sm:mb-8 transition-all duration-1500 delay-700 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
+          <div className={`flex justify-center space-x-4 sm:space-x-6 mb-8 sm:mb-12 transition-all duration-1500 delay-700 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'}`}>
             {[Github, Linkedin, Youtube].map((Icon, index) => (
               <a 
                 key={index}
@@ -232,8 +161,8 @@ const Landing = () => {
         </div>
       </main>
 
-      {/* Services Preview Section */}
-      <section className="w-screen relative z-30 py-16 sm:py-20 px-4 md:px-6 lg:px-8">
+      {/* Services Preview Section - Moved this outside of main to reduce bottom spacing */}
+      <section className="w-screen relative z-30 py-16 sm:py-20 px-4 md:px-6 lg:px-8 -mt-8">
         <div className="max-w-none w-full">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 sm:mb-16 bg-gradient-to-r from-blue-700 to-gray-800 bg-clip-text text-transparent">
             Our Expertise

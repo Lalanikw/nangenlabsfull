@@ -22,28 +22,9 @@ function ServicesPage() {
       ],
       technologies: ['React', 'Next.js', 'Node.js', 'Python', 'AWS'],
       color: 'from-blue-600 to-blue-800',
-      duration: '2-12 weeks',
-      price: 'Starting from $3,000'
+      
     },
-    {
-      id: 'automation',
-      title: 'Automation Solutions',
-      icon: Zap,
-      shortDesc: 'Streamline operations with intelligent automation',
-      description: 'Boost productivity and reduce manual tasks with our custom automation solutions. From workflow automation to robotic process automation (RPA), we help businesses operate more efficiently.',
-      features: [
-        'Business Process Automation (BPA)',
-        'Robotic Process Automation (RPA)',
-        'Workflow Optimization & Design',
-        'Email & Marketing Automation',
-        'Document Processing Automation',
-        'Custom Bot Development'
-      ],
-      technologies: ['Python'],
-      color: 'from-gray-600 to-gray-800',
-      duration: '1-8 weeks',
-      price: 'Starting from $2,000'
-    },
+    
     {
       id: 'ai-solutions',
       title: 'AI Solutions',
@@ -61,9 +42,24 @@ function ServicesPage() {
         'Custom AI Integration'
       ],
       technologies: ['Python', 'TensorFlow', 'PyTorch', 'OpenAI', 'Antropic', 'Hugging Face'],
-      color: 'from-blue-700 to-gray-700',
-      duration: '4-16 weeks',
-      price: 'Starting from $4,000'
+      color: 'from-blue-700 to-gray-700'
+    },
+    {
+      id: 'automation',
+      title: 'Automation Solutions',
+      icon: Zap,
+      shortDesc: 'Streamline operations with intelligent automation',
+      description: 'Boost productivity and reduce manual tasks with our custom automation solutions. From workflow automation to robotic process automation (RPA), we help businesses operate more efficiently.',
+      features: [
+        'Business Process Automation (BPA)',
+        'Robotic Process Automation (RPA)',
+        'Workflow Optimization & Design',
+        'Email & Marketing Automation',
+        'Document Processing Automation',
+        'Custom Bot Development'
+      ],
+      technologies: ['Python'],
+      color: 'from-gray-600 to-gray-800'
     },
     {
       id: 'penetration-testing',
@@ -82,9 +78,7 @@ function ServicesPage() {
         'Compliance & Regulatory Testing'
       ],
       technologies: ['Metasploit', 'Burp Suite', 'Nmap', 'OWASP'],
-      color: 'from-gray-700 to-blue-900',
-      duration: '1-4 weeks',
-      price: 'Starting from $1,500'
+      color: 'from-gray-700 to-blue-900'
     }
   ];
 
@@ -185,7 +179,7 @@ function ServicesPage() {
               <div className="text-sm text-gray-600">Projects Completed</div>
             </div>
             <div className="bg-white/70 backdrop-blur-md rounded-xl p-4 border border-gray-200">
-              <div className="text-2xl font-bold text-blue-600">98%</div>
+              <div className="text-xl font-bold text-blue-600">Guaranteed</div>
               <div className="text-sm text-gray-600">Client Satisfaction</div>
             </div>
             <div className="bg-white/70 backdrop-blur-md rounded-xl p-4 border border-gray-200">
