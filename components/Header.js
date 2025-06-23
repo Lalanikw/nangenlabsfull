@@ -62,11 +62,24 @@ const Header = () => {
     <header className="absolute top-0 left-0 w-full z-50">
       <nav className={`w-full px-4 md:px-6 lg:px-8 py-6 transition-all duration-1000 ${isLoaded ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}>
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <Link href="/">
-            <div className="text-2xl font-bold bg-gradient-to-r from-blue-700 to-gray-800 bg-clip-text text-transparent cursor-pointer">
-              NanGenLabs
-            </div>
-          </Link>
+        <Link href="/">
+              <div className="flex items-center space-x-3 cursor-pointer">
+                <video 
+                  className="w-10 h-10 object-contain"
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                >
+                  <source src="/gearspin.mp4" type="video/mp4" />
+                  {/* Fallback for browsers that don't support video */}
+                  <div className="w-200 h-200 bg-gradient-to-r from-blue-700 to-gray-800 rounded-full"></div>
+                </video>
+                <div className="text-2xl font-bold bg-gradient-to-r from-blue-700 to-gray-800 bg-clip-text text-transparent">
+                  NanGenLabs
+                </div>
+              </div>
+            </Link>
           
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">

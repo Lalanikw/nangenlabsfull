@@ -34,17 +34,14 @@ const Landing = () => {
 
   return (
     <div 
-      className="full-width-override w-screen min-h-screen bg-gradient-to-br from-gray-100 via-blue-50 to-gray-200 text-gray-900 overflow-x-hidden relative" 
+      className="full-width-override w-screen bg-gradient-to-br from-gray-100 via-blue-50 to-gray-200 text-gray-900 overflow-x-hidden relative" 
       style={{ 
         width: '100vw', 
-        height: '100vh',
         marginLeft: 'calc(-50vw + 50%)', 
         marginRight: 'calc(-50vw + 50%)',
         marginTop: '0',
         paddingTop: '0',
-        position: 'absolute',
-        top: '0',
-        left: '0'
+        paddingBottom: '100px' // Add padding to extend background
       }}
     >
       {/* Animated Background Elements */}
@@ -142,7 +139,7 @@ const Landing = () => {
           </div>
 
           {/* Social Links */}
-          <div className={`flex justify-center space-x-4 sm:space-x-6 mb-8 sm:mb-12 transition-all duration-1500 delay-700 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'}`}>
+          {/* <div className={`flex justify-center space-x-4 sm:space-x-6 mb-8 sm:mb-12 transition-all duration-1500 delay-700 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'}`}>
             {[Github, Linkedin, Youtube].map((Icon, index) => (
               <a 
                 key={index}
@@ -152,7 +149,7 @@ const Landing = () => {
                 <Icon size={20} className="sm:w-6 sm:h-6 text-gray-700 group-hover:text-blue-600 transition-colors duration-300" />
               </a>
             ))}
-          </div>
+          </div> */}
 
           {/* Scroll Indicator */}
           <div className={`animate-bounce transition-all duration-1500 delay-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>

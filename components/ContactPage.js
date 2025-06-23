@@ -62,7 +62,7 @@ export default function ContactPage() {
     <div className="min-h-screen bg-gradient-to-br from-gray-100 via-blue-50 to-gray-200 py-12 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Hero Section */}
-        <div className="text-center mb-16 pt-32">
+        <div className="text-center mb-16 pt-28">
           <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-700 via-gray-800 to-blue-900 bg-clip-text text-transparent mb-6">
             Contact Us
           </h1>
@@ -74,8 +74,8 @@ export default function ContactPage() {
 
         <div className="max-w-4xl mx-auto">
           {/* Contact Form */}
-          <div className="bg-white/70 backdrop-blur-md rounded-2xl p-8 border border-gray-200">
-            <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-700 to-gray-800 bg-clip-text text-transparent text-center">
+          <div className="bg-white/70 backdrop-blur-md rounded-2xl p-4 border border-gray-200">
+            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-700 to-gray-800 bg-clip-text text-transparent text-center">
               Send us a Message
             </h3>
 
@@ -218,10 +218,10 @@ export default function ContactPage() {
         </div>
 
         {/* Additional Info Section */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="text-center bg-white/70 backdrop-blur-md rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition-all duration-300">
-            <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl flex items-center justify-center">
-              <Clock size={32} className="text-white" />
+            <div className="w-14 h-14 mx-auto mb-4 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl flex items-center justify-center">
+              <Clock size={30} className="text-white" />
             </div>
             <h3 className="font-semibold mb-2 text-gray-800">Quick Response</h3>
             <p className="text-sm text-gray-600">
@@ -230,8 +230,8 @@ export default function ContactPage() {
           </div>
 
           <div className="text-center bg-white/70 backdrop-blur-md rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition-all duration-300">
-            <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-700 to-gray-700 rounded-2xl flex items-center justify-center">
-              <MessageSquare size={32} className="text-white" />
+            <div className="w-14 h-14 mx-auto mb-4 bg-gradient-to-r from-blue-700 to-gray-700 rounded-2xl flex items-center justify-center">
+              <MessageSquare size={30} className="text-white" />
             </div>
             <h3 className="font-semibold mb-2 text-gray-800">Detailed Responses</h3>
             <p className="text-sm text-gray-600">
@@ -241,7 +241,7 @@ export default function ContactPage() {
         </div>
 
         {/* FAQ Section */}
-        <div className="mt-16 bg-white/70 backdrop-blur-md rounded-2xl p-8 border border-gray-200">
+        <div className="mt-1 bg-white/70 backdrop-blur-md rounded-2xl p-8 border border-gray-200">
           <h3 className="text-2xl font-bold text-center mb-8 bg-gradient-to-r from-blue-700 to-gray-800 bg-clip-text text-transparent">
             Frequently Asked Questions
           </h3>

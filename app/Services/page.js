@@ -161,13 +161,14 @@ function ServicesPage() {
           </p>
           
           {/* Services Image */}
-          <div className="flex justify-center mb-12">
+          <div className="flex justify-center mb-20">
+            
             <Image 
-              className="rounded-2xl shadow-xl border border-gray-200/50" 
-              src="/servicePage.PNG" 
+              className="" 
+              src="/services2.PNG" 
               alt="NanGenLabs Services Overview" 
-              width={400} 
-              height={200}
+              width={300} 
+              height={150}
               priority
             />
           </div>

@@ -1,6 +1,7 @@
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 const outfitFont = Outfit({ subsets: ["latin"] });
 
 export const metadata = {
@@ -16,9 +17,14 @@ export default function RootLayout({ children }) {
           <Header />
           <main className="relative">
             {children}
+           
           </main>
+          <Footer/>
+          
         </div>
+        
       </body>
+      
     </html>
   );
 }
