@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ChevronDown, Code, Shield, Brain, Zap, Calendar, ArrowRight, Github, Linkedin, Youtube, Settings, Cog } from 'lucide-react';
+import Image from 'next/image';
 
 const Landing = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -82,7 +83,7 @@ const Landing = () => {
       </div>
 
       {/* Hero Section - Added more top padding and adjusted spacing */}
-      <main className="w-screen relative z-30 flex flex-col items-center justify-center min-h-screen px-4 md:px-6 lg:px-8 text-center pt-24 sm:pt-32">
+      <main className="w-screen relative z-30 flex flex-col items-center justify-center min-h-screen px-4 md:px-6 lg:px-8 text-center pt-1 sm:pt-1">
         <div className="w-full max-w-none">
           <div>
           <div className={`transition-all duration-1500 delay-300 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
@@ -93,27 +94,6 @@ const Landing = () => {
             <div className="text-lg sm:text-xl md:text-2xl mb-8 h-10 sm:h-10 flex items-center justify-center">
               <span className="animate-pulse">Empowering Digital Transformation with</span>
             </div>
-            {/* Rotating Services */}
-            <div className="h-16 sm:h-16 flex items-center justify-center mb-8">
-              {services.map((service, index) => {
-                const Icon = service.icon;
-                // return (
-                //   <div
-                //     key={index}
-                //     className={`absolute flex items-center space-x-2 sm:space-x-3 transition-all duration-1000 ${
-                //       activeService === index 
-                //         ? 'opacity-100 scale-100 rotate-0' 
-                //         : 'opacity-0 scale-75 rotate-12'
-                //     }`}
-                //   >
-                //     <Icon size={24} className={`sm:text-2xl bg-gradient-to-r ${service.color} bg-clip-text text-transparent`} />
-                //     <span className={`text-xl sm:text-2xl md:text-3xl font-semibold bg-gradient-to-r ${service.color} bg-clip-text text-transparent`}>
-                //       {service.title}
-                //     </span>
-                //   </div>
-                // );
-              })}
-            </div>
             
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-12 sm:mb-16 leading-relaxed px-4">
               We bridge innovative technology with strategic solutions. Specialized in custom web development, 
@@ -121,47 +101,15 @@ const Landing = () => {
             </p>
           </div>
 
-          {/* CTA Buttons */}
-          <div className={`flex flex-col sm:flex-row gap-4 sm:gap-6 mb-12 sm:mb-16 transition-all duration-1500 delay-500 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
-            <Link href="/ContactUs">
-              <button className="group px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full font-semibold text-base sm:text-lg text-white hover:scale-105 transform transition-all duration-300 flex items-center justify-center space-x-2 shadow-xl hover:shadow-blue-500/25 w-full sm:w-auto">
-                <Calendar size={18} className="sm:w-5 sm:h-5" />
-                <span>Book Consultation</span>
-                <ArrowRight size={18} className="sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </button>
-            </Link>
-            
-            <Link href="/Services">
-              <button className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-blue-600 text-blue-600 rounded-full font-semibold text-base sm:text-lg hover:bg-blue-600 hover:text-white hover:scale-105 transform transition-all duration-300 shadow-xl hover:shadow-blue-500/25 w-full sm:w-auto">
-                View Services
-              </button>
-            </Link>
-          </div>
-
-          {/* Social Links */}
-          {/* <div className={`flex justify-center space-x-4 sm:space-x-6 mb-8 sm:mb-12 transition-all duration-1500 delay-700 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'}`}>
-            {[Github, Linkedin, Youtube].map((Icon, index) => (
-              <a 
-                key={index}
-                href="#" 
-                className="p-2 sm:p-3 rounded-full bg-gray-200/80 backdrop-blur-md hover:bg-gray-300/80 transition-all duration-300 hover:scale-110 group"
-              >
-                <Icon size={20} className="sm:w-6 sm:h-6 text-gray-700 group-hover:text-blue-600 transition-colors duration-300" />
-              </a>
-            ))}
-          </div> */}
-
           {/* Scroll Indicator */}
           <div className={`animate-bounce transition-all duration-1500 delay-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
-            <ChevronDown size={28} className="sm:w-8 sm:h-8 text-blue-600" />
+            <ChevronDown size={28} className="sm:w-10 sm:h-10 text-blue-600" />
           </div>
         </div>
-      </main>
-
-      {/* Services Preview Section - Moved this outside of main to reduce bottom spacing */}
-      <section className="w-screen relative z-30 py-16 sm:py-20 px-4 md:px-6 lg:px-8 -mt-8">
+      
+        <section className="w-screen relative z-30 py-1 sm:py-1 px-4 md:px-6 lg:px-8 mt-20">
         <div className="max-w-none w-full">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 sm:mb-16 bg-gradient-to-r from-blue-700 to-gray-800 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 bg-gradient-to-r from-blue-700 to-gray-800 bg-clip-text text-transparent">
             Our Expertise
           </h2>
           
@@ -184,6 +132,143 @@ const Landing = () => {
                 </div>
               );
             })}
+          </div>
+        </div>
+        <div className="p-5">
+      <Link href="/Services">
+              <button className="px-6 sm:px-8 py-1 sm:py-1 border-2 border-blue-600 text-blue-600 rounded-full font-semibold text-base sm:text-lg hover:bg-blue-600 hover:text-white hover:scale-105 transform transition-all duration-300 shadow-xl hover:shadow-blue-500/25 w-full sm:w-auto">
+                View Services
+              </button>
+          </Link>
+          </div>
+        </section>
+        
+      </main>
+
+      {/* Portfolio Section - Circle Design with Images */}
+      <section className="w-screen relative z-30 py-16 sm:py-20 px-4 md:px-6 lg:px-8">
+        <div className="max-w-none w-full">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-700 to-gray-800 bg-clip-text text-transparent">
+              Featured Projects
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Showcasing our latest work across different industries
+            </p>
+          </div>
+          
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16 max-w-6xl mx-auto">
+            {/* GoTravelSriLanka Circle */}
+            <div className="group text-center">
+              <div className="relative mb-6">
+                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 p-0.5 group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                  <div className="w-full h-full rounded-full overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=150&h=150&fit=crop&crop=center" 
+                      alt="Beautiful beach in Sri Lanka" 
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div className="w-full h-full bg-blue-600 flex items-center justify-center" style={{display: 'none'}}>
+                      <span className="text-white font-bold text-2xl">GT</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <h3 className="text-xl font-bold mb-2">GoTravelSriLanka</h3>
+              <p className="text-blue-600 font-medium text-sm mb-3">Travel & Tourism Platform</p>
+              <p className="text-gray-600 text-sm mb-4 max-w-xs mx-auto">
+                Comprehensive booking platform for Sri Lankan destinations and tours
+              </p>
+              
+              <a 
+                href="https://gotravelsrilanka.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-full hover:scale-105 transform transition-all duration-300 shadow-md"
+              >
+                Visit Sri Lanka <ArrowRight size={14} className="ml-1" />
+              </a>
+            </div>
+
+            {/* AllergySolutionsHub Circle */}
+            <div className="group text-center">
+              <div className="relative mb-6">
+                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-700 to-gray-700 p-0.5 group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                  <div className="w-full h-full rounded-full overflow-hidden">
+                    
+                    <img
+                      src="/allerylogo.jpg" 
+                      alt="Pollen and flower allergy concept" 
+                      className="w-auto h-auto object-cover"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div className="w-full h-full bg-blue-700 flex items-center justify-center" style={{display: 'none'}}>
+                      <span className="text-white font-bold text-2xl">AS</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <h3 className="text-xl font-bold mb-2">AllergySolutionsHub</h3>
+              <p className="text-blue-700 font-medium text-sm mb-3">Healthcare Platform, booking App</p>
+              <p className="text-gray-600 text-sm mb-4 max-w-xs mx-auto">
+                Comprehensive allergy information and resources for patients and providers
+              </p>
+              
+              <a 
+                href="https://www.allergysolutionshub.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white text-sm font-medium rounded-full hover:scale-105 transform transition-all duration-300 shadow-md"
+              >
+                Allergy Solutions <ArrowRight size={14} className="ml-1" />
+              </a>
+            </div>
+
+            {/* TouchMap Circle */}
+            <div className="group text-center">
+              <div className="relative mb-6">
+                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-gray-600 to-gray-800 p-0.5 group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                  <div className="w-full h-full rounded-full overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=150&h=150&fit=crop&crop=center" 
+                      alt="Map of United States" 
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div className="w-full h-full bg-gray-600 flex items-center justify-center" style={{display: 'none'}}>
+                      <span className="text-white font-bold text-2xl">TM</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <h3 className="text-xl font-bold mb-2">TouchMap</h3>
+              <p className="text-gray-600 font-medium text-sm mb-3">Interactive Mapping App</p>
+              <p className="text-gray-600 text-sm mb-4 max-w-xs mx-auto">
+                Touch-friendly mapping application with advanced location services
+              </p>
+              
+              <a 
+                href="https://touchmap.vercel.app" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium rounded-full hover:scale-105 transform transition-all duration-300 shadow-md"
+              >
+                DataTrace | Privacy <ArrowRight size={14} className="ml-1" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
