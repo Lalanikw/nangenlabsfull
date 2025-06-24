@@ -84,10 +84,10 @@ const Landing = () => {
 
       {/* Hero Section - Added more top padding and adjusted spacing */}
       <main className="w-screen relative z-30 flex flex-col items-center justify-center min-h-screen px-4 md:px-6 lg:px-8 text-center pt-1 sm:pt-1">
-        <div className="w-full max-w-none">
+        <div className="w-full max-w-none mt-10">
           <div>
           <div className={`transition-all duration-1500 delay-300 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl h-16 sm:h-16 font-bold mb-8 bg-gradient-to-r from-blue-700 to-gray-800 bg-clip-text text-transparent animate-pulse">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl h-16 sm:h-16 font-bold mb-8 mt-20 bg-gradient-to-r from-blue-700 to-gray-800 bg-clip-text text-transparent animate-pulse">
               NanGenLabs
             </h1>
             </div>
@@ -161,7 +161,7 @@ const Landing = () => {
             {/* GoTravelSriLanka Circle */}
             <div className="group text-center">
               <div className="relative mb-6">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 p-0.5 group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 group-hover:scale-110 transition-transform duration-500 shadow-lg">
                   <div className="w-full h-full rounded-full overflow-hidden">
                     <img 
                       src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=150&h=150&fit=crop&crop=center" 
@@ -180,9 +180,9 @@ const Landing = () => {
               </div>
               
               <h3 className="text-xl font-bold mb-2">GoTravelSriLanka</h3>
-              <p className="text-blue-600 font-medium text-sm mb-3">Travel & Tourism Platform</p>
+              <p className="text-blue-600 font-medium text-sm mb-3">Travel Information Hub</p>
               <p className="text-gray-600 text-sm mb-4 max-w-xs mx-auto">
-                Comprehensive booking platform for Sri Lankan destinations and tours
+              Complete Sri Lanka travel guide with locations, VISA information, and essential resources for travelers
               </p>
               
               <a 
@@ -198,7 +198,7 @@ const Landing = () => {
             {/* AllergySolutionsHub Circle */}
             <div className="group text-center">
               <div className="relative mb-6">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-700 to-gray-700 p-0.5 group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-700 to-gray-700 group-hover:scale-110 transition-transform duration-500 shadow-lg">
                   <div className="w-full h-full rounded-full overflow-hidden">
                     
                     <img
@@ -217,10 +217,10 @@ const Landing = () => {
                 </div>
               </div>
               
-              <h3 className="text-xl font-bold mb-2">AllergySolutionsHub</h3>
+              <h3 className="text-xl font-bold mb-2">Allergy Medicine Clinic</h3>
               <p className="text-blue-700 font-medium text-sm mb-3">Healthcare Platform, booking App</p>
               <p className="text-gray-600 text-sm mb-4 max-w-xs mx-auto">
-                Comprehensive allergy information and resources for patients and providers
+              Specialized allergy clinic platform for patient information, doctor consultations, and appointment booking
               </p>
               
               <a 
@@ -236,7 +236,7 @@ const Landing = () => {
             {/* TouchMap Circle */}
             <div className="group text-center">
               <div className="relative mb-6">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-gray-600 to-gray-800 p-0.5 group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-gray-600 to-gray-800  group-hover:scale-110 transition-transform duration-500 shadow-lg">
                   <div className="w-full h-full rounded-full overflow-hidden">
                     <img 
                       src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=150&h=150&fit=crop&crop=center" 
@@ -255,9 +255,9 @@ const Landing = () => {
               </div>
               
               <h3 className="text-xl font-bold mb-2">TouchMap</h3>
-              <p className="text-gray-600 font-medium text-sm mb-3">Interactive Mapping App</p>
+              <p className="text-gray-600 font-medium text-sm mb-3">Data Privacy Law Map</p>
               <p className="text-gray-600 text-sm mb-4 max-w-xs mx-auto">
-                Touch-friendly mapping application with advanced location services
+              Interactive US map showing state-by-state data privacy laws and regulatory information
               </p>
               
               <a 

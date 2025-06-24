@@ -7,6 +7,11 @@ const outfitFont = Outfit({ subsets: ["latin"] });
 export const metadata = {
   title: "NanGenLabs",
   description: "Empowering the Future",
+  icons: {
+    icon: '/favicon.png', // or '/favicon.ico'
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
 };
 
 export default function RootLayout({ children }) {
