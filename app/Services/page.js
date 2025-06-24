@@ -135,7 +135,7 @@ function ServicesPage() {
           </div>
         </div>
 
-        <Link href={`/appointment?service=${service.id}`}>
+        <Link href="/ContactUs">
           <button className={`w-full px-6 py-3 bg-gradient-to-r ${service.color} text-white rounded-full font-semibold hover:scale-105 transform transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl`}>
             <Calendar size={18} />
             <span>Book Consultation</span>
