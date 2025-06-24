@@ -165,7 +165,7 @@ function ServicesPage() {
             
             <Image 
               className="" 
-              src="/services2.PNG" 
+              src="/services2.png" 
               alt="NanGenLabs Services Overview" 
               width={300} 
               height={150}
